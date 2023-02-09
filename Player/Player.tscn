@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0gifc85g2m56"]
+
+[ext_resource type="Script" path="res://Player/Hand.cs" id="1_xs8um"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_15nf6"]
+top_radius = 0.0
+bottom_radius = 0.01
+
+[node name="Player" type="XROrigin3D"]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="."]
+
+[node name="Left" type="XRController3D" parent="." node_paths=PackedStringArray("raycastCursor", "raycastVisualizer")]
+tracker = &"left_hand"
+script = ExtResource("1_xs8um")
+raycastCursor = NodePath("RayCast3D")
+raycastVisualizer = NodePath("MeshInstance3D")
+
+[node name="RayCast3D" type="RayCast3D" parent="Left"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+target_position = Vector3(0, -10, 0)
+collide_with_areas = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Left"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -1)
+mesh = SubResource("CylinderMesh_15nf6")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Left"]
+radius = 0.0472235
+
+[node name="Right" type="XRController3D" parent="." node_paths=PackedStringArray("raycastCursor", "raycastVisualizer")]
+tracker = &"right_hand"
+script = ExtResource("1_xs8um")
+raycastCursor = NodePath("RayCast3D")
+raycastVisualizer = NodePath("MeshInstance3D")
+
+[node name="RayCast3D" type="RayCast3D" parent="Right"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+target_position = Vector3(0, -10, 0)
+collide_with_areas = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Right"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -1)
+mesh = SubResource("CylinderMesh_15nf6")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Right"]
+radius = 0.0472235

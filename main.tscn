@@ -1,0 +1,169 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwdpu05wxjipo"]
+
+[ext_resource type="PackedScene" uid="uid://d0gifc85g2m56" path="res://Player/Player.tscn" id="1_mlqki"]
+[ext_resource type="PackedScene" uid="uid://bqq3lrdx6uy6n" path="res://3DUI.tscn" id="2_t18ui"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mr74m"]
+
+[sub_resource type="Sky" id="Sky_uchpi"]
+sky_material = SubResource("ProceduralSkyMaterial_mr74m")
+
+[sub_resource type="Environment" id="Environment_gbcny"]
+background_mode = 2
+sky = SubResource("Sky_uchpi")
+
+[node name="main" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+size = Vector3(10, 1, 10)
+
+[node name="Player" parent="." instance=ExtResource("1_mlqki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="3DUI" parent="." node_paths=PackedStringArray("subViewport") instance=ExtResource("2_t18ui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2)
+subViewport = NodePath("SubViewport")
+
+[node name="SubViewport" type="SubViewport" parent="3DUI"]
+size = Vector2i(1024, 1024)
+
+[node name="Control" type="Control" parent="3DUI/SubViewport"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -512.0
+offset_right = 512.0
+offset_bottom = 512.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="3DUI/SubViewport/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = -61.0
+offset_right = 61.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+
+[node name="3DUI2" parent="." node_paths=PackedStringArray("subViewport") instance=ExtResource("2_t18ui")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 2)
+subViewport = NodePath("SubViewport")
+
+[node name="SubViewport" type="SubViewport" parent="3DUI2"]
+size = Vector2i(1024, 1024)
+
+[node name="Control2" type="Control" parent="3DUI2/SubViewport"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -512.0
+offset_right = 512.0
+offset_bottom = 512.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="3DUI2/SubViewport/Control2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = -61.0
+offset_right = 61.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "2"
+
+[node name="3DUI3" parent="." node_paths=PackedStringArray("subViewport") instance=ExtResource("2_t18ui")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 1, 0)
+subViewport = NodePath("SubViewport")
+
+[node name="SubViewport" type="SubViewport" parent="3DUI3"]
+size = Vector2i(1024, 1024)
+
+[node name="Control3" type="Control" parent="3DUI3/SubViewport"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -512.0
+offset_right = 512.0
+offset_bottom = 512.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="3DUI3/SubViewport/Control3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = -61.0
+offset_right = 61.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "3"
+
+[node name="3DUI4" parent="." node_paths=PackedStringArray("subViewport") instance=ExtResource("2_t18ui")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 2, 1, 0)
+subViewport = NodePath("SubViewport")
+
+[node name="SubViewport" type="SubViewport" parent="3DUI4"]
+size = Vector2i(1024, 1024)
+
+[node name="Control4" type="Control" parent="3DUI4/SubViewport"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -512.0
+offset_right = 512.0
+offset_bottom = 512.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="3DUI4/SubViewport/Control4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = -61.0
+offset_right = 61.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "4"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gbcny")
